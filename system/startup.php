@@ -2,6 +2,18 @@
 // Error Reporting
 error_reporting(E_ALL);
 
+// debug functions
+function dd() {
+  call_user_func_array('d', func_get_args());
+  exit;
+}
+
+function d() {
+  foreach (func_get_args() as $arg) {
+    var_dump($arg);
+  }
+}
+
 // Check Version
 if (version_compare(phpversion(), '5.4.0', '<') == true) {
 	exit('PHP5.4+ Required');
