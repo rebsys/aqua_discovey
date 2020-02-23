@@ -1,0 +1,6 @@
+*~
+*.log
+.idea
+/backup
+/config.php
+/admin/config.php
