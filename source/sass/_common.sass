@@ -1,1 +1,75 @@
-@use "../bootstrap-4.4.1/scss/bootstrap-grid"
+@import "fonts"
+@import  "var"
+@import  "../bootstrap-4.4.1/scss/aqua"
+@import "macro"
+@import "mixin"
+
+body
+  margin: 0
+
+a
+  text-decoration: none
+  color: $black
+  &:hover
+    text-decoration: none
+
+h1,h2,h3,h4,h5,h6
+  font-family: HelveticaNeueCyr_Heavy
+
+//ul
+//  list-style: none
+//  padding: 0
+
+#svg-symbols
+  display: none
+
+.debug
+  border: solid thin red
+
+svg
+  &.chevron
+    stroke: $black
+    width: 24px
+    height: 8px
+    &.chevron-down
+  &.heart
+    width: 25px
+    height: 24px
+  &.bag
+    width: 25px
+    height: 25px
+  &.lens
+    width: 25px
+    height: 24px
+  &.man
+    width: 26px
+    height: 25px
+  &.vk
+    width: 29px
+    height: 28px
+  &.facebook
+    width: 12px
+    height: 23px
+  &.youtube
+    width: 29px
+    height: 28px
+
+.hover
+  position: relative
+  &:after
+    position: absolute
+    content: ''
+    height: 1px
+    width: 0%
+    left: 50%
+    transform: translateX(-50%)
+    display: block
+    margin-top: 7%
+    border-top: solid 3px $black
+    transition: width ease-out 0.2s
+  &:hover:after
+    width: 100%
+  &.white:after
+    border-color: $white
+  a:hover
+    color: initial

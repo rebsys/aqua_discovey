@@ -1,46 +1,188 @@
-<footer>
-  <div class="container">
-    <div class="row">
-      {% if informations %}
-      <div class="col-sm-3">
+<div class="container">
+  <div class="row">
+    {% if informations %}
+      <div class="col-sm-2">
         <h5>{{ text_information }}</h5>
         <ul class="list-unstyled">
-         {% for information in informations %}
-          <li><a href="{{ information.href }}">{{ information.title }}</a></li>
+          {% for information in informations %}
+            <li><a href="{{ information.href }}">{{ information.title }}</a></li>
           {% endfor %}
         </ul>
       </div>
-      {% endif %}
-      <div class="col-sm-3">
-        <h5>{{ text_service }}</h5>
-        <ul class="list-unstyled">
-          <li><a href="{{ contact }}">{{ text_contact }}</a></li>
-          <li><a href="{{ return }}">{{ text_return }}</a></li>
-          <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-3">
-        <h5>{{ text_extra }}</h5>
-        <ul class="list-unstyled">
-          <li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
-          <li><a href="{{ voucher }}">{{ text_voucher }}</a></li>
-          <li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
-          <li><a href="{{ special }}">{{ text_special }}</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-3">
-        <h5>{{ text_account }}</h5>
-        <ul class="list-unstyled">
-          <li><a href="{{ account }}">{{ text_account }}</a></li>
-          <li><a href="{{ order }}">{{ text_order }}</a></li>
-          <li><a href="{{ wishlist }}">{{ text_wishlist }}</a></li>
-          <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>
-        </ul>
-      </div>
+    {% endif %}
+    <div class="col-sm-2">
+      <h5>{{ text_service }}</h5>
+      <ul class="list-unstyled">
+        <li><a href="{{ contact }}">{{ text_contact }}</a></li>
+        <li><a href="{{ return }}">{{ text_return }}</a></li>
+        <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
+      </ul>
     </div>
-    <hr>
-    <p>{{ powered }}</p>
+    <div class="col-sm-2">
+      <h5>{{ text_extra }}</h5>
+      <ul class="list-unstyled">
+        <li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
+        <li><a href="{{ voucher }}">{{ text_voucher }}</a></li>
+        <li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
+        <li><a href="{{ special }}">{{ text_special }}</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-6">
+      <h5>{{ text_account }}</h5>
+      <ul class="list-unstyled">
+        <li><a href="{{ account }}">{{ text_account }}</a></li>
+        <li><a href="{{ order }}">{{ text_order }}</a></li>
+        <li><a href="{{ wishlist }}">{{ text_wishlist }}</a></li>
+        <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>
+      </ul>
+    </div>
   </div>
+  <hr>
+  <p>{{ powered }}</p>
+</div>
+<footer id="bottom-footer">
+  <nav class="desktop">
+    <div class="one">
+      <section>
+        <header>
+          <h5>Каталог</h5>
+        </header>
+        <ul class="list-unstyled">
+          {%  for i in 0..10 %}
+          <li><a href="">test link</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+      <section>
+        <header>
+          <h5>Твой дизайн</h5>
+        </header>
+        <ul class="list-unstyled">
+          {%  for i in 0..4 %}
+          <li><a href="">test link</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+    </div>
+    <div class="two">
+      <section>
+        <header>
+          <h5>Помощь</h5>
+        </header>
+        <ul class="list-unstyled">
+          {% for information in informations %}
+            <li><a href="{{ information.href }}">{{ information.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+    </div>
+    <div class="three">
+      <section>
+        <header>
+          <h5>О Aquadiscovery</h5>
+        </header>
+        <ul class="list-unstyled">
+          {%  for i in 0..4 %}
+            <li><a href="">test link</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+      <section>
+        <ul class="list-unstyled">
+          {%  for i in 0..2 %}
+            <li><a href="">test link</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+    </div>
+    <div class="four">
+      <section class="phone">
+        <a href="tel://{{ telephone_href }}">{{ telephone }}</a>
+      </section>
+      <section class="social">
+        <a href="">
+          <svg class="vk"><use xlink:href="#svg-vk"></use></svg>
+        </a><a href="">
+          <svg class="facebook"><use xlink:href="#svg-facebook"></use></svg>
+        </a><a href="">
+          <svg class="youtube"><use xlink:href="#svg-youtube"></use></svg>
+        </a>
+      </section>
+      <section class="region">
+        <p>Изменить регион: <br></br>Россия</p>
+      </section>
+      <section class="copyrigh">
+        <p>Политика конфедициальности</p>
+        <p>AquaDiscovery &copy; 2014-2018. Все права защищены</p>
+      </section>
+    </div>
+  </nav>
+  <nav class="mobile">
+    <section class="phone">
+      <a href="tel://{{ telephone_href }}">{{ telephone }}</a>
+    </section>
+    <section class="social">
+      <a href="">
+        <svg class="vk"><use xlink:href="#svg-vk"></use></svg>
+      </a><a href="">
+        <svg class="facebook"><use xlink:href="#svg-facebook"></use></svg>
+      </a><a href="">
+        <svg class="youtube"><use xlink:href="#svg-youtube"></use></svg>
+      </a>
+    </section>
+    <section class="collaps">
+      <header data-toggle="collapse" data-target=".mobile_catalog">
+        <h5>Каталог</h5>
+        <svg class="chevron chevron-down">
+          <use xlink:href="#svg-chevron"/>
+        </svg>
+      </header>
+      <ul class="list-unstyled collapse mobile_catalog">
+        {%  for i in 0..10 %}
+          <li><a href="">test link</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section class="collaps">
+      <header data-toggle="collapse" data-target=".mobile_design">
+        <h5>Твой дизайн</h5>
+        <svg class="chevron chevron-down">
+          <use xlink:href="#svg-chevron"/>
+        </svg>
+      </header>
+      <ul class="list-unstyled collapse mobile_design">
+        {%  for i in 0..4 %}
+          <li><a href="">test link</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+      <section class="collaps">
+        <header data-toggle="collapse" data-target=".mobile_help">
+          <h5>Помощь</h5>
+          <svg class="chevron chevron-down">
+            <use xlink:href="#svg-chevron"/>
+          </svg>
+        </header>
+        <ul class="list-unstyled collapse mobile_help">
+          {% for information in informations %}
+            <li><a href="{{ information.href }}">{{ information.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+      <section class="collaps">
+        <header data-toggle="collapse" data-target=".mobile_about">
+          <h5>О Aquadiscovery</h5>
+          <svg class="chevron chevron-down">
+            <use xlink:href="#svg-chevron"/>
+          </svg>
+        </header>
+        <ul class="list-unstyled collapse mobile_about">
+          {%  for i in 0..4 %}
+            <li><a href="">test link</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+  </nav>
 </footer>
 {% for script in scripts %}
 <script src="{{ script }}" type="text/javascript"></script>
@@ -49,4 +191,5 @@
 OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
 Please donate via PayPal to donate@opencart.com
 //-->
+{% include "aqua/template/common/svg.html" %}
 </body></html>

@@ -1,5 +1,178 @@
-@import "var"
 @import "common"
 
-body
-  margin: 0
+#top-header
+  .logo
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: $blue
+    svg
+      height: 49px
+      width: 181px
+  .desktop
+    display: grid
+    @include for_mobile_only
+      display: none
+    grid-template-columns: 1.88fr 1.27fr 1.25fr 1.25fr 4.38fr
+    grid-column-gap: 1px
+    //align-items: center
+    //justify-items: center
+    grid-template-rows: 86px
+    font-family: HelveticaNeueCyr_Roman
+    ul
+      li
+        display: inline
+    .menu
+      white-space: nowrap
+      display: flex
+      align-items: center
+      justify-content: center
+      font-family: HelveticaNeueCyr_Heavy
+      font-size: 18px
+      line-height: 120%
+      letter-spacing: 0.02em
+      &.menu-black
+        background-color: black
+        a
+          color: $white
+    .addon
+      display: grid
+      grid-template-columns: 1.32fr 0.68fr
+      grid-template-rows: 0.7fr 1.3fr
+      grid-gap: 0
+      font-size: 14px
+      line-height: 140%
+      color: $grey
+      ul
+        margin: 7px 0
+      .line
+        grid-column-start: span 2
+        border-bottom: solid 1px $grey_light
+        .link
+          padding: 0 1.2rem
+          &.phone
+            font-family: HelveticaNeueCyr_Heavy
+      .search,
+      .icons
+        display: flex
+        align-items: center
+        ul
+          flex: auto
+        .link
+          padding: 0 5%
+      .search
+        justify-content: right
+        padding-right: 2%
+        border-right: solid 1px $grey_light
+        input
+          border-color: transparent
+          background-color: transparent
+          transition: all ease-out 0.3s
+          border-radius: 0.5rem
+          width: 80%
+          padding: 4px 7px
+        .lens
+          margin: 0 5px
+        &:hover
+          input
+            border-color: $grey_light
+            background-color: $grey_bg
+  .mobile
+    display: flex
+    @include for_desktop_only
+      display: none
+    flex-wrap: nowrap
+    height: 37px
+    .logo
+      flex: 1 1 auto
+      max-width: 120px
+      svg
+        height: 20px
+        width: 73px
+    .separator
+      flex: 1 1 auto
+    .icons
+      ul
+        display: flex
+        margin: 0
+        .link
+          padding: 0 2vw
+      svg
+        stroke-width: 2px
+    .menu
+      justify-content: center
+      border-left: solid thin $grey_light
+      flex: 1 1 auto
+      max-width: 50px
+      svg
+        width: 14px
+    .icons,
+    .menu
+      display: flex
+      align-items: center
+      svg
+        height: 14px
+
+#bottom-footer
+  background-color: $blue
+  color: $white
+  a
+    color: $white
+  .phone
+    font-family: HelveticaNeueCyr_Heavy
+    font-size: 32px
+    line-height: 120%
+    letter-spacing: 0.02em
+  .desktop
+    display: grid
+    @include for_mobile_only
+      display: none
+    grid-template-columns: repeat(16, 1fr)
+    grid-gap: 0
+    padding-top: 2rem
+    padding-bottom: 1.5rem
+    font-family: HelveticaNeueCyr_Roman
+    font-size: 14px
+    line-height: 140%
+    .four
+      text-align: right
+    .one
+      grid-column-start: 3
+      grid-column-end: 6
+    .two,
+    .three
+      grid-column-start: span 3
+    .four
+      display: flex
+      flex-flow: column
+      justify-content: space-between
+      grid-column-end: span 3
+      .region
+        font-family: HelveticaNeueCyr_Heavy
+        font-size: 18px
+        line-height: 120%
+        letter-spacing: 0.02em
+  .mobile
+    display: block
+    padding: 1.2rem 1rem 1rem 1rem
+    svg.chevron-down
+      stroke: $white
+      stroke-width: 2px
+    .phone,
+    .social
+      text-align: center
+    .social
+      margin: 1rem 0
+      svg
+        margin: 1rem
+    section.collaps
+      border-bottom: solid thin $white
+    header
+      display: flex
+      justify-content: space-between
+      align-items: center
+      &[aria-expanded="true"]
+        svg.chevron-down
+          transform: rotate(180deg)
+    @include for_desktop_only
+      display: none

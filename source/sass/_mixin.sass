@@ -1,0 +1,7 @@
+@mixin for_desktop_only
+  @media not all and (max-width: $screen-xs-max)
+    @content
+
+@mixin for_mobile_only
+  @media (max-width: $screen-xs-max)
+    @content
